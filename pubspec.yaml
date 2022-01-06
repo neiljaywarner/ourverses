@@ -16,6 +16,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  firebase_analytics: ^9.0.4
 
 dev_dependencies:
   bloc_test: ^9.0.1
