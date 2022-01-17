@@ -5,11 +5,11 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+//import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ourverses/counter/counter.dart';
 import 'package:ourverses/l10n/l10n.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 class CounterPage extends StatelessWidget {
   const CounterPage({Key? key}) : super(key: key);
 
@@ -37,15 +37,19 @@ class CounterView extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () async {
-              final CounterCubit counterCubit = context.read();
-              counterCubit.increment();
+              context.read<CounterCubit>().increment();
+              /*
               await FirebaseAnalytics.instance
                 .logEvent(
                 name: 'incremented',
                 parameters: {
                   'counter': counterCubit.state
                 },
+
+
             );
+
+               */
             },
             child: const Icon(Icons.add),
           ),
