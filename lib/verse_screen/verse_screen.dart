@@ -7,12 +7,12 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 class VersesScreen extends StatelessWidget {
   VersesScreen({Key? key}) : super(key: key);
 
-  final PageController _controller = PageController(viewportFraction: 0.9);
+  final PageController _controller = PageController(viewportFraction: 0.8);
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Our Verses'),),
     body: PageView(
-      scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.vertical,
       controller:  _controller,
           onPageChanged: print,
           children: verses.map((e) =>
