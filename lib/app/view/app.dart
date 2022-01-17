@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ourverses/counter/counter.dart';
 import 'package:ourverses/l10n/l10n.dart';
 import 'package:ourverses/verse_screen/verse_screen.dart';
 

@@ -8,12 +8,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ourverses/app/app.dart';
 import 'package:ourverses/counter/counter.dart';
+import 'package:ourverses/verse_screen/verse_screen.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
+    testWidgets('renders verses screen', (tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
+      expect(find.byType(VersesScreen), findsOneWidget);
     });
   });
 }
