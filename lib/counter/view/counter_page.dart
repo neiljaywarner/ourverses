@@ -37,16 +37,19 @@ class CounterView extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () async {
-              // ignore: omit_local_variable_types
-              final CounterCubit counterCubit = context.read()
-              ..increment();
+              context.read<CounterCubit>().increment();
+              /*
               await FirebaseAnalytics.instance
                 .logEvent(
                 name: 'incremented',
                 parameters: {
                   'counter': counterCubit.state
                 },
+
+
             );
+
+               */
             },
             child: const Icon(Icons.add),
           ),
