@@ -1,15 +1,44 @@
 
 import 'package:flutter/material.dart';
-class VersesScreen extends StatelessWidget {
-  VersesScreen({Key? key}) : super(key: key);
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-  final PageController _controller = PageController(viewportFraction: 0.8);
+class HomeScreen extends HookConsumerWidget {
+  HomeScreen({Key? key}) : super(key: key);
+
+  final widgets = [const VersesPageViewWidget(),
+    const Center(child: Text('Placeholder for verse list'),),
+  ];
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final _selectedIndex = useState(0);
+
+    return Scaffold(
     appBar: AppBar(title: const Text('Our Verses'),),
-    body: PageView(
+    bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home',),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Verses',),
+        ],
+      currentIndex: _selectedIndex.value,
+      //selectedItemColor: Colors.amber[800],
+      onTap: (int selectedIndex) => _selectedIndex.value =  selectedIndex,
+    ),
+    body: widgets[_selectedIndex.value],
+  );
+  }
+}
+
+class VersesPageViewWidget extends StatelessWidget {
+  const VersesPageViewWidget({
+    Key? key,
+  }) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return PageView(
       scrollDirection: Axis.vertical,
-      controller:  _controller,
           onPageChanged: print,
           children: verses.map((e) =>
               Card(
@@ -17,8 +46,8 @@ class VersesScreen extends StatelessWidget {
                   ListTile(title: Text(e.reference, textScaleFactor: 1.7,),
                   subtitle: Text(e.text, textScaleFactor: 1.7,),),),
               ),).toList(),
-      ),
-  );
+      );
+  }
 }
 
 
