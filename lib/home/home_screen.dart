@@ -18,7 +18,8 @@ class HomeScreen extends HookConsumerWidget {
     bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home',),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Verses',),
+          BottomNavigationBarItem(icon: Icon(Icons.format_align_left_outlined),
+            label: 'Verses',),
         ],
       currentIndex: _selectedIndex.value,
       //selectedItemColor: Colors.amber[800],
