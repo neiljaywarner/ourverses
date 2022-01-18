@@ -25,3 +25,11 @@ jobs:
 
       - name: Check Code Coverage
         uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+        with:
+          path: "./coverage/lcov.info"
+          min_coverage: 95
+          #exclude: "**/*_observer.dart **/change.dart"
+        # Note: Above is how you do exclusions and min percentages
+        # they advise to keep 100% code coverage for new projects
+        # perhaps that's possible for awhile
+        # https://verygood.ventures/blog/very-good-coverage

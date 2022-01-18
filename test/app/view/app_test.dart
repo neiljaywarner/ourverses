@@ -7,13 +7,21 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ourverses/app/app.dart';
-import 'package:ourverses/verse_screen/verse_screen.dart';
+import 'package:ourverses/home/home_screen.dart';
 
 void main() {
   group('App', () {
     testWidgets('renders verses screen', (tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(VersesScreen), findsOneWidget);
+      expect(find.byType(HomeScreen), findsOneWidget);
+      final verseListButton = find.text('Verses');
+      expect(verseListButton, findsOneWidget);
+      expect(find.text('Psalms 119:9-11 WEB'), findsOneWidget);
+      await tester.tap(verseListButton);
+      await tester.pumpAndSettle();
+      expect(find.text('Placeholder for verse list'), findsOneWidget);
+
+
     });
   });
 }
