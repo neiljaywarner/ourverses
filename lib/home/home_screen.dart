@@ -40,7 +40,8 @@ class VersesPageViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       scrollDirection: Axis.vertical,
-          onPageChanged: print,
+          //onPageChanged: print,
+          // Note: put analytics here.
           children: verses.map((e) =>
               Card(
                 child: Center(child:
