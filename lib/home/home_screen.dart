@@ -17,7 +17,7 @@ class HomeScreen extends HookConsumerWidget {
     return Scaffold(
     appBar: AppBar(
       backgroundColor: Colors.white,
-      foregroundColor: Colors.black,
+      foregroundColor: const Color.fromRGBO(28, 27, 31, 1),
       elevation: 0,
       title: Text(appBarTitle),),
     bottomNavigationBar: BottomNavigationBar(
