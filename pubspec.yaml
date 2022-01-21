@@ -7,6 +7,7 @@ environment:
   sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
+
   bloc: ^8.0.1 # TODO: Remove later
   firebase_analytics: ^9.0.4
   firebase_core: ^1.10.6
@@ -25,7 +26,12 @@ dependencies:
 
 
 dev_dependencies:
+
+
+  bdd_widget_test: ^1.2.1
   bloc_test: ^9.0.1
+
+  build_runner: ^2.1.7
   flutter_test:
     sdk: flutter
   mocktail: ^0.2.0
