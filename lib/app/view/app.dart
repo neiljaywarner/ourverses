@@ -5,11 +5,9 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ourverses/counter/view/counter_page.dart';
-//import 'package:ourverses/home/home_screen.dart';
+import 'package:ourverses/home/home_screen.dart';
 import 'package:ourverses/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -29,7 +27,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: HomeScreen(),
     );
   }
 }
