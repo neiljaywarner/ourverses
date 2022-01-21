@@ -7,4 +7,4 @@ Feature: User can navigate to verse list
     Scenario: Tapping the list icon goes to the verses screen
         Given the app is running
         When I tap {Icons.format_align_left_outlined} icon
-        Then I see {'Verses'} text
+        Then I see {'Placeholder for verse list'} text

@@ -19,7 +19,7 @@ void main() {
     testWidgets('''Tapping the list icon goes to the verses screen''', (tester) async {
       await theAppIsRunning(tester);
       await iTapIcon(tester, Icons.format_align_left_outlined);
-      await iSeeText(tester, 'Verses');
+      await iSeeText(tester, 'Placeholder for verse list');
     });
   });
 }

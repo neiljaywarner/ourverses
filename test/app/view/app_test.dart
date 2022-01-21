@@ -1,5 +1,3 @@
-@Skip('Skipping this test while hello world BDD testing counter')
-
 // Copyright (c) 2021, Very Good Ventures
 // https://verygood.ventures
 //
