@@ -15,7 +15,11 @@ class HomeScreen extends HookConsumerWidget {
     final appBarTitle =  (_selectedIndex.value == 0) ? 'Home' : 'Verses';
 
     return Scaffold(
-    appBar: AppBar(title: Text(appBarTitle),),
+    appBar: AppBar(
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
+      elevation: 0,
+      title: Text(appBarTitle),),
     bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home',),
