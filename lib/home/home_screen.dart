@@ -12,9 +12,14 @@ class HomeScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final _selectedIndex = useState(0);
+    final appBarTitle =  (_selectedIndex.value == 0) ? 'Home' : 'Verses';
 
     return Scaffold(
-    appBar: AppBar(title: const Text('Our Verses'),),
+    appBar: AppBar(
+      backgroundColor: Colors.white,
+      foregroundColor: const Color.fromRGBO(28, 27, 31, 1),
+      elevation: 0,
+      title: Text(appBarTitle),),
     bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home',),
